@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Call Log Monitor</string>
+    <string name="stop_server_button_text">Stop Server</string>
+    <string name="start_server_button_text">Start Server</string>
+    <string name="server_running_status_text">Listening at: </string>
+    <string name="server_not_running_status_text">Server not running.</string>
+    <string name="notification_title">Server is running…</string>
+    <string name="notification_message">Collecting phone call data and exposing it on the local network.</string>
+    <string name="notification_channel_name">Running server</string>
+    <string name="notification_channel_description">This notification can show information about the server that is running.</string>
+    <string name="missing_permissions_dialog_title">Missing permissions</string>
+    <string name="missing_permissions_dialog_message">Permissions need to be granted to run the server.</string>
+    <string name="cancel">Cancel</string>
+    <string name="go_to_settings">Go to settings</string>
+</resources>
