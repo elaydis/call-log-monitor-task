@@ -35,6 +35,12 @@ returns information about ongoing call or null if there is none
 
 returns information about calls that took place while the server was running and have already ended
 
+## Known issues
+
+### Instrumentation tests
+
+The instrumentation tests rely on the standard phone app by Google being installed on the device, in order to make a phone call and test call logging. The phone app needs to have been opened before so that there are no additional popups disrupting the test flow.
+
 ## Relevant third-party libraries
 
 ### Ktor

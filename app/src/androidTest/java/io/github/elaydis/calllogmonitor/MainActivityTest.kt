@@ -58,10 +58,9 @@ class MainActivityTest {
         checkCallLogEntry()
     }
 
-    // currently only works if phone app is on the home screen
     private fun makePhoneCall() {
         device.pressHome()
-        device.findObject(UiSelector().description("Phone")).clickAndWaitForNewWindow()
+        goToPhoneApp()
         device.findObject(UiSelector().description("key pad")).clickAndWaitForNewWindow()
         device.findObject(UiSelector().text("1")).click()
         device.findObject(UiSelector().text("2")).click()
@@ -75,6 +74,16 @@ class MainActivityTest {
         val context = ApplicationProvider.getApplicationContext<Context>()
         val intent = context.packageManager.getLaunchIntentForPackage(packageName)
         context.startActivity(intent)
+        device.wait(Until.hasObject(By.pkg(packageName).depth(0)), 5000L)
+    }
+
+    private fun goToPhoneApp() {
+        val packageName = "com.android.dialger"
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val intent = context.packageManager.getLaunchIntentForPackage(packageName)
+        intent?.let {
+            context.startActivity(intent)
+        }
         device.wait(Until.hasObject(By.pkg(packageName).depth(0)), 5000L)
     }
 
